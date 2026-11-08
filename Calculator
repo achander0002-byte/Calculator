@@ -1,1 +1,54 @@
+import math
 
+age = float(input("What is your age?    "))
+if age < 5:
+    print("Sorry, you do not meet the age requirements")
+else:
+    print("You are old enough to use this calculator")
+    print("Usable operations are +, -, *, /, **, sqrt, %")
+    num1 = float(input("Type the first number"))
+    operation = input("Type an operation")
+    if operation == '/':
+        num2 = float(input("Type the next number"))
+        while num2 == 0:
+            num2 = float(input("Type a nonzero number"))
+        total1 = num1 / num2
+        print(total1)
+    elif operation == 'sqrt':
+        while num1 < 0:
+            num1 = float(input("Type an non-negative integer"))
+        else:
+            total1 = math.sqrt(num1)
+            print(total1)
+            
+    else:
+        while operation not in ["+","-","*","/","**","sqrt","%"]:
+            operation = input("That is not a recognized function. Type a different one.")
+        if operation == '+':
+            num2 = float(input("Type the next number"))
+            total1 = num1 + num2
+            print(total1)
+        elif operation =='-':
+            num2 = float(input("Type the next number"))
+            total1 = num1 - num2
+            print(total1)
+        elif operation == '*':
+            num2 = float(input("Type the next number"))
+            total1 = num1 * num2
+            print(total1)
+        elif operation =='/':
+            while num2 == 0:
+                num2 = int(input("Type a non-zero integer"))
+            total1 = num1 / num2
+            print(total1)
+        elif operation == '**':
+            num2 = float(input("Type the next number"))
+            total1 = num1 ** num2
+            print(total1)
+        elif operation == 'sqrt':
+            total1 = math.sqrt(num1)
+            print(total1)
+        elif operation == '%':
+            num2 = float(input("Type the next number"))
+            total1 = num1 * (num2/100)
+            print(total1)
